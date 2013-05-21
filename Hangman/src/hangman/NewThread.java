@@ -27,6 +27,11 @@ class NewThread implements Runnable {
             // Let the thread sleep for a while.
             Thread.sleep(1000);
          }
+         UI.displayStatus();
+         	System.out.println("Time has Expired. \nYou have been hanged");
+         	Hangman.sleep(1000);
+         	UI.getroundUI().setVisible(false);
+         	UISettings.getsettingsWindow().setVisible(true);
      } catch (InterruptedException e) {
          System.out.println("Time Remaining Thread interrupted.");
      }
