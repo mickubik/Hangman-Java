@@ -34,7 +34,7 @@ public class Hangman {
     	
     	
     	UISettings.createUISettings();
-    	/*
+    	
     	////New Thread test
         new NewThread(); // create a new thread
         try {
@@ -48,7 +48,7 @@ public class Hangman {
         }
         System.out.println("Main thread exiting.");
     	/// New Thread test end
-*/
+
         
  
         //oneRound();

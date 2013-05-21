@@ -3,24 +3,33 @@ package hangman;
 // Create a new thread.
 class NewThread implements Runnable {
    Thread t;
+   static int timeRemaining;
+   
    NewThread() {
       // Create a new, second thread
-      t = new Thread(this, "Demo Thread");
-      System.out.println("Child thread: " + t);
+      t = new Thread(this, "Time Remaining Thread");
+      System.out.println("Time Remaining: " + t);
       t.start(); // Start the thread
    }
+   
+	public static void setTimeRemaining(int input){
+		timeRemaining = input;
+	}
+	public static int getTimeRemaining(){
+		  return timeRemaining;
+	}
    
    // This is the entry point for the second thread.
    public void run() {
       try {
-         for(int i = 5; i > 0; i--) {
-            System.out.println("Child Thread: " + i);
+         for (timeRemaining = 60; timeRemaining > 0; timeRemaining--){
+            System.out.println("Time Remaining: " + timeRemaining);
             // Let the thread sleep for a while.
-            Thread.sleep(500);
+            Thread.sleep(1000);
          }
      } catch (InterruptedException e) {
-         System.out.println("Child interrupted.");
+         System.out.println("Time Remaining Thread interrupted.");
      }
-     System.out.println("Exiting child thread.");
+     System.out.println("Exiting time remaining thread thread.");
    }
 }
