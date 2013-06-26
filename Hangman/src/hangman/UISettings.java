@@ -73,14 +73,27 @@ public class UISettings extends JFrame implements ActionListener, ItemListener{
 	}
 	
 	public void actionPerformed(ActionEvent e){
-	    if (e.getSource() == StartButton){
+	    if (e.getSource() == StartButton && aCheckboxIsChecked()){
 	    	myText.setText(" Hiiiiii!");
 	    	setVisible(false);
 	    	Settings.selectWord();
 	    	UI.createUI();
 	    	Hangman.oneRound();
 	    }
+	    else{
+	    	//TODO, add error message saying that no checkboxes were selected
+	    }
 
+	}
+	
+	public boolean aCheckboxIsChecked(){
+		if (fourLetterWordButton.isSelected()){
+			return true;
+		}
+		if (fiveLetterWordButton.isSelected()){
+			return true;
+		}
+		return false;
 	}
 	
 	public void itemStateChanged(ItemEvent e){
