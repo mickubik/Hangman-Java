@@ -10,7 +10,6 @@ public class Player {
 	}
 	public static void setplayerLives(int input){
 		playerLives = input;
-		//UI.updatePicture();
 	}
 	public static void setplayerScore(int input){
 		playerScore = input;
@@ -24,8 +23,7 @@ public class Player {
 	public static int getplayerScore(){
 		  return playerScore;
 	}
-	
-	
+		
 	  public void createPlayer(String playerName){
 	    //Player currentPlayer = new Player();
 	    Player.playerName = playerName;

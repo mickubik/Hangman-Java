@@ -12,12 +12,13 @@ class NewThread implements Runnable {
       t.start(); // Start the thread
    }
    
-	public static void setTimeRemaining(int input){
-		timeRemaining = input;
-	}
 	public static int getTimeRemaining(){
 		  return timeRemaining;
 	}
+	public static void setTimeRemaining(int input){
+		timeRemaining = input;
+	}
+
    
    // This is the entry point for the second thread.
    public void run() {

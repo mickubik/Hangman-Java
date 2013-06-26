@@ -3,7 +3,7 @@ package hangman;
 
 
 public class GuessingChar {
-	static char guessChar = 'C';
+	static char guessChar;
 	
 	public static void setguessChar(char input){
 		  guessChar = input;

@@ -21,7 +21,6 @@ public class UISettings extends JFrame implements ActionListener, ItemListener{
 	
 	
     JCheckBox fourLetterWordButton = new JCheckBox("Allow 4 Letter Words");
-    //fourLetterWordButton.setMnemonic(KeyEven.VK_C);
     JCheckBox fiveLetterWordButton = new JCheckBox("Allow 5 Letter Words");
 	JButton StartButton = new JButton("Start");
 	static JTextArea myText = new JTextArea("Hello Player");
@@ -30,8 +29,7 @@ public class UISettings extends JFrame implements ActionListener, ItemListener{
 	
 	private static UISettings settingsWindow = new UISettings();
 	
-	public static UISettings getsettingsWindow()
-	{
+	public static UISettings getsettingsWindow(){
 	    return settingsWindow;
 	}
 	
