@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.ArrayList;
+import java.util.List;
  
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -19,9 +21,9 @@ import javax.swing.JTextArea;
 public class UISettings extends JFrame implements ActionListener, ItemListener{
 	
 	
-	
-    JCheckBox fourLetterWordButton = new JCheckBox("Allow 4 Letter Words");
-    JCheckBox fiveLetterWordButton = new JCheckBox("Allow 5 Letter Words");
+	private static List<JCheckBox> charactersAllowedInWordCheckBoxes = new ArrayList<JCheckBox>();
+    static JCheckBox fourLetterWordButton = new JCheckBox("Allow 4 Letter Words");
+    static JCheckBox fiveLetterWordButton = new JCheckBox("Allow 5 Letter Words");
 	JButton StartButton = new JButton("Start");
 	static JTextArea myText = new JTextArea("Hello Player");
 	JPanel bottomPanel = new JPanel();
@@ -63,13 +65,20 @@ public class UISettings extends JFrame implements ActionListener, ItemListener{
 	
 	public static void createUISettings(){
 	   // UISettings myApplication = new UISettings();
-	    
+
+		addCheckboxesToCharactersAllowedInWordCheckBoxes();
+		
 	    // Specify where will it appear on the screen:
 		getsettingsWindow().setLocation(100, 100);
 		getsettingsWindow().setSize(600, 400);
 	 
 	    // Show it!
 		getsettingsWindow().setVisible(true);
+	}
+	
+	public static void addCheckboxesToCharactersAllowedInWordCheckBoxes(){
+		charactersAllowedInWordCheckBoxes.add(fourLetterWordButton);
+		charactersAllowedInWordCheckBoxes.add(fiveLetterWordButton);
 	}
 	
 	public void actionPerformed(ActionEvent e){
@@ -87,11 +96,10 @@ public class UISettings extends JFrame implements ActionListener, ItemListener{
 	}
 	
 	public boolean aCheckboxIsChecked(){
-		if (fourLetterWordButton.isSelected()){
-			return true;
-		}
-		if (fiveLetterWordButton.isSelected()){
-			return true;
+		for (JCheckBox checkBox : charactersAllowedInWordCheckBoxes){
+			if (checkBox.isSelected()) {
+				return true;
+			}
 		}
 		return false;
 	}
