@@ -26,15 +26,11 @@ public class Hangman {
      */
     public static void main(String[] args) {
     	Settings.setInitialValues();
-    	//Settings.selectWord();
     	Player user = new Player();
     	user.createPlayer("Mic");
-    	
-
-    	
-    	
+    	 	
     	UISettings.createUISettings();
-    	/*
+    	
     	////New Thread test
         new NewThread(); // create a new thread
         try {
@@ -47,13 +43,6 @@ public class Hangman {
            System.out.println("Main thread interrupted.");
         }
         System.out.println("Main thread exiting.");
-    	/// New Thread test end
-*/
-        
- 
-        //oneRound();
-        //System.out.println("Enter 1 to continue playing or anything else to quit");
-        //continuePlaying = getUserInput();
     }
     
     public static void oneRound(){
@@ -122,22 +111,7 @@ public class Hangman {
         	System.out.println("You Guessed the Word");
         	oneRound();
         }	
-    }
-    
-    /*public char getGuessChar(ActionEvent e)
-    {
-    	char guessChar= ' ';
-    	while (guessChar == ' '){
-    		if (e.getSource() == UI.AButton){
-    	        guessChar = 'A';
-    	      }
-    	}
-    	return guessChar;
-      
-    }
-    */
-    
-    
+    }   
     
     public static char getGuessChar() {
 	    char guessChar = ' ';
@@ -152,55 +126,11 @@ public class Hangman {
 	    return guessChar;
     }
 
-  /*  
-    public static char getGuessChar2() {
-    	String guessString = "";
-        boolean validInput = false;
-        boolean validChar = false;
-        String validChars = "abcdefghigklmnopqrstuvwxyz";
-        while (!validInput || !validChar){
-        	//System.out.println("valid Input =" + validInput + " valid Char = " + validChar);
-            guessString = getUserInput();
-            try {
-            	guessString.charAt(1);
-            	System.out.println("You entered more than one letter try again");
-            } catch (StringIndexOutOfBoundsException e) {
-            	//System.err.println("One value only good StringIndexOutOfBoundsException: " + e.getMessage());
-            	validInput = true;
-            	//System.out.println("valid input");
-            }
-            try {
-            	guessString.charAt(0);
-            } catch (StringIndexOutOfBoundsException e) {
-            	System.err.println("You didn't enter anything! Try again");
-            	validInput = false;
-            	//System.out.println("invalid input");
-            }
-            for (int i=0; i < 26; i++){
-            	if (validChars.charAt(i) == guessString.charAt(0)) {
-            		validChar = true;
-            		break;
-            	}
-            }
-        	if (validChar == false) {
-        		System.out.println("You did not enter a proper letter");
-        	}
-        }
-        char guessChar = guessString.charAt(0);
-        return guessChar;
-    }
-    
-*/    
-    
-    
-    
-    
-    
+         
     public static String replaceCharAt(String s, int pos, char c) {
         return s.substring(0,pos) + c + s.substring(pos+1);
     }
-   
-    
+       
     public static String getUserInput() {
         String name = "Error if I get displayed";
         BufferedReader reader;
@@ -216,6 +146,7 @@ public class Hangman {
         return name;
                
     }
+    
     public static void sleep(int input){
     	try{
     		Thread.sleep(input); // do nothing for 1000 miliseconds (1 second)

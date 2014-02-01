@@ -325,7 +325,8 @@ public class UI extends JFrame implements ActionListener
 	  myText.setText("Word to guess: " + Round.getword() + "\n" + 
 			  Round.getguessingWord() + "\n" +
 			  "Incorrect Guesses: " + Round.getincorrectGuesses() + "\n" +
-			  "Lives: " + Player.getplayerLives());
+			  "Lives: " + Player.getplayerLives() + "\n" +
+			  "Time Remaining: " + NewThread.getTimeRemaining());	  		
 	  updatePicture();
   }
   

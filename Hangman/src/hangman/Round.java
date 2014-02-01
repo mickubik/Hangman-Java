@@ -1,6 +1,10 @@
 package hangman;
 
 public class Round{
+	/*Constants*/
+	public static final int TIME_PER_ROUND = 60;
+	/*End Constants*/
+	
 	static String word;
 	static String incorrectGuesses;
 	static int wordLength;
@@ -60,6 +64,7 @@ public class Round{
 		setincorrectGuesses("");
 		setwordLength((getword()).length());
 		setcorrectGuesses(0);
-		setinitialguessingWord();		
+		setinitialguessingWord();
+		NewThread.setTimeRemaining(TIME_PER_ROUND);
 	}
 }
